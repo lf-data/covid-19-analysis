@@ -1,7 +1,7 @@
 ---
 title: "THE SPREAD OF COVID-19 IN THE WORLD"
 author: "Francesco Lorè"
-output: pdf_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
