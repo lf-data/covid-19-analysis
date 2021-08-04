@@ -72,7 +72,7 @@ among variables.
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 By seeing the **avg\_si** versus the other measures, It is clear there
 is not an high correlation.
@@ -85,7 +85,7 @@ moment.
 covid %>% ggplot() + geom_boxplot(mapping = aes(y = avg_si, x = europe), color = "blue", fill="blue", alpha=0.2) + labs(x = "Europe", y = "Avg Stringency Index")
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 There aren’t sensible differences between Europe countries and
 non-Europe countries.
@@ -184,7 +184,7 @@ p4 = ggplot(mapping = aes(y = summ_bss$adjr2,x = seq(1,p))) + geom_line()+
 grid.arrange(p1, p2,p3,p4, ncol = 4)
 ```
 
-![](project-first-exam_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](project/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 As shown by the graphs the best subset model is a model with 4
 predictors: The CV error, Mallow’Cp and Adjusted *R*<sup>2</sup> get the
@@ -250,7 +250,7 @@ I plot residuals versus the fitted values.
 ggplot(mapping = aes(y = residuals(ols1),x = fitted(ols1), color = covid$europe)) + geom_point()+ geom_hline(yintercept = 0, color = "red")+ labs(title="Residuals vs. Fitted values", y = "Residuals",x = "Fitted values")
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 
 The graph show a no strong right opening megaphone, therefore a
 non-constant variance.
@@ -261,7 +261,7 @@ non-constant variance.
 residualPlots(ols1)
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
     ##                Test stat Pr(>|Test stat|)   
     ## avg_rt           -0.2773         0.781989   
@@ -282,7 +282,7 @@ I use the Q-Q plot to investigate the normality assumption.
 ggplot(mapping = aes(sample = residuals(ols1))) + stat_qq() + stat_qq_line() + labs(title = "QQ-plot", y = "Residuals", x = "Theoretical Quantiles")
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 I can check this computing also Shapiro-Wilk normality test:
 
@@ -327,7 +327,7 @@ that diverge substantially from the rest of the data.
 halfnorm(hat, 14, labs = rownames(covid), ylab="Leverages")
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
 
 ### Outliers
 
@@ -339,7 +339,7 @@ rsta = rstandard(ols1)
 ggplot(mapping = aes(x = fitted(ols1), y = rsta, color=covid$europe)) + geom_point() + labs(title = "Standardize residuals vs. Fitted values", y = "Standardize Residuals", x = "Fitted values") + geom_hline(yintercept = c(-3,0, 3), color = c("green","red","green")) 
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 It is possible to see there are two outliers points
 (*r*<sub>*i*</sub> &gt; \|3\|).
 
@@ -352,7 +352,7 @@ influential points:
 ggplot(mapping = aes(x = hat, y = rsta)) + geom_point() + labs(title = "Standardize residuals vs. Leverage", y = "Standardize Residuals", x = "Leverage") + geom_text(mapping = aes(hat[hat>0.088], rsta[hat>0.088], label = rownames(covid)[hat>0.088]))
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 I calculate the Cook’s distance by fit R function:
 
@@ -377,7 +377,7 @@ par(mfrow=c(2,2))
 plot(ols2)
 ```
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 ## Analysis of estimate parameters
 
@@ -396,7 +396,7 @@ plot(ols2)
 To show graphically the relationship between the response and
 predictors, I plot the following graphs.
 
-<img src="project-first-exam_files/figure-gfm/unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="project/figure-gfm/unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 The response increase faster in countries with a smaller infection rate
 , there is relatively little change in countries with an infection rate
