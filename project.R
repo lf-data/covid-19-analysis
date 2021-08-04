@@ -33,7 +33,7 @@ library(GGally)
 #' 
 #' ## The goal of my project
 #' 
-#' The goal is to explore the correlation between the average of stringency index and the other measures by checking why a governments decide to increase or reduce the closure level of activity.
+#' The goal is to explore the correlation between the average of stringency index and the other measures by checking why a governments decide to increase or reduce the closure level of activities.
 #' 
 #' ## Load data
 #' 
