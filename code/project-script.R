@@ -40,7 +40,7 @@ library(GGally)
 #' Loading the dataset from a *csv* file selecting the variables that I am going to use.
 #' 
 ## ----echo=FALSE--------------------------------------------------------------
-covid = read.csv2("assignment/owid-covid-data3.csv", header=TRUE)
+covid = read.csv2("../data/owid-covid-data.csv", header=TRUE)
 rownames(covid) = covid$location
 covid = covid %>% select(avg_stringency_index,avg_reproduction_rate,
                 infection_rate,fatality_rate,hdi,life_expectancy,europe)
