@@ -65,13 +65,6 @@ going to use.
 First of all, I create a scatterplot matrix by observing the correlation
 among variables.
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
 <img src="project_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 By seeing the **avg\_si** versus the other measures, It is clear there
